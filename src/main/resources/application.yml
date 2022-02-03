@@ -1,0 +1,11 @@
+resilience4j.retry:
+    configs:
+        default:
+            maxRetryAttempts: 5
+            waitDuration: 1
+            retryExceptions:
+                - org.springframework.web.client.HttpServerErrorException
+                - org.springframework.web.client.HttpClientErrorException
+    instances:
+        commandClass:
+            baseConfig: default
